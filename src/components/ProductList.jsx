@@ -1,24 +1,49 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import Product from './Product'
-import UseFetch from './hooks/UseFetch'
+import Skeleton from './Skeleton'
+import useProduct from './hooks/useProduct';
 
 const ProductCart = () => {
+  const { products, loading, error } = useProduct(
+    "https://fakestoreapi.com/products"
+  );
+  const [showTopRated, setShowTopRated] = useState(false)
+  const [search, setSearch] = useState("")
 
-    const {products,loading,error}=UseFetch();
-      console.log(products);
 
-       if(loading){
-          return <h1>Loading</h1>
-       }
+  const filteredProducts = useMemo(() => {
+    let list = products;
+
+    if (showTopRated) {
+      list = list.filter(product => product?.rating?.rate >= 4)
+    }
+
+    if (search.trim()) {
+      list = list.filter(product =>
+        product.title.toLowerCase().includes(search.toLowerCase())
+      )
+    }
+
+    return list
+  }, [products, search, showTopRated])
+
 
   return (
-    <div className='product_cart'>
+    <>
+      <div>
+        <input type="text" onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())} value={search} />
+        {/* <button onClick={handleSearch}>Search</button> */}
+      </div>
+      <button onClick={() => setShowTopRated(true)}>Top Rated Products</button>
+      <div className='product_cart'>
         {
-          products?.map((product)=>(
-             <Product product={product} key={product.id}/>
+          loading ? (Array(20).fill("").map((_, i) => <Skeleton key={i} />)) : filteredProducts?.map((product) => (
+            <Product product={product} key={product.id} />
           ))
+
         }
-    </div>
+      </div>
+    </>
   )
 }
 
