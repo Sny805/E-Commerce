@@ -5,6 +5,8 @@ import Men from "./components/Men";
 import ProductCart from "./components/ProductList";
 import Error from "./components/Error";
 import ProductDetail from "./components/ProductDetail";
+import Women from "./components/Women";
+import About from "./components/About";
 
 const appRouter = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const appRouter = createBrowserRouter([
       {
         path: "men",
         element: <Men />,
+      },
+      {
+        path: "women",
+        element: <Women />,
+      },
+      {
+        path: "about",
+        element: <About />,
       },
       {
         path: "product/:prodId",

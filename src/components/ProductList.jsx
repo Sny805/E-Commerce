@@ -30,11 +30,24 @@ const ProductCart = () => {
 
   return (
     <>
-      <div>
-        <input type="text" onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())} value={search} />
-        {/* <button onClick={handleSearch}>Search</button> */}
+      <div className="filter_bar">
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value.toLowerCase())}
+          className="search_input"
+        />
+
+        <button
+          className={`filter_btn ${showTopRated ? "active" : ""}`}
+          onClick={() => setShowTopRated((prev) => !prev)}
+        >
+          {showTopRated ? "All Products" : "Top Rated"}
+        </button>
       </div>
-      <button onClick={() => setShowTopRated(true)}>Top Rated Products</button>
+
+
       <div className='product_cart'>
         {
           loading ? (Array(20).fill("").map((_, i) => <Skeleton key={i} />)) : filteredProducts?.map((product) => (
