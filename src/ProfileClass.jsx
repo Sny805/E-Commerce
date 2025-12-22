@@ -2,63 +2,67 @@ import React from "react";
 
 
 class ProfileClass extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      userDetails: null,
-      error: null,
-    };
-  }
-
-  async componentDidMount() {
-    try {
-      const res = await fetch("https://api.github.com/users/Sny805");
-      if (!res.ok) throw new Error("Failed to fetch user data");
-
-      const data = await res.json();
-      this.setState({ userDetails: data });
-    } catch (error) {
-      this.setState({ error: error.message });
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0,
+            userDetails: null,
+            error: null,
+        };
     }
-  }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.count !== this.state.count) {
-      console.log("Count updated");
+    async componentDidMount() {
+        try {
+            const res = await fetch("https://api.github.com/users/Sny805");
+            if (!res.ok) throw new Error("Failed to fetch user data");
+
+            const data = await res.json();
+            this.setState({ userDetails: data });
+            this.timer = setInterval(() => {
+                console.log("patel")
+            }, 1000)
+        } catch (error) {
+            this.setState({ error: error.message });
+        }
     }
-  }
 
-  componentWillUnmount() {
-    console.log("Profile component unmounted");
-  }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.count !== this.state.count) {
+            console.log("Count updated");
+        }
+    }
 
-  render() {
-    const { userDetails, count, error } = this.state;
+    componentWillUnmount() {
+        console.log("Profile component unmounted");
+        clearInterval(this.timer)
+    }
 
-    if (error) return <h2 className="error">{error}</h2>;
-    if (!userDetails) return <h2 className="loading">Loading profile...</h2>;
+    render() {
+        const { userDetails, count, error } = this.state;
 
-    const { name, location, avatar_url, bio, followers, following } =
-      userDetails;
+        if (error) return <h2 className="error">{error}</h2>;
+        if (!userDetails) return <h2 className="loading">Loading profile...</h2>;
 
-    return (
-      <div className="profile-card">
-        <img className="avatar" src={avatar_url} alt={name} />
+        const { name, location, avatar_url, bio, followers, following } =
+            userDetails;
 
-        <h2 className="name">{name}</h2>
-        <p className="location">{location || "Location not available"}</p>
-        <p className="bio">{bio || "No bio available"}</p>
+        return (
+            <div className="profile-card">
+                <img className="avatar" src={avatar_url} alt={name} />
 
-        <div className="stats">
-          <span>Followers: {followers}</span>
-          <span>Following: {following}</span>
-        </div>
+                <h2 className="name">{name}</h2>
+                <p className="location">{location || "Location not available"}</p>
+                <p className="bio">{bio || "No bio available"}</p>
 
-       
-      </div>
-    );
-  }
+                <div className="stats">
+                    <span>Followers: {followers}</span>
+                    <span>Following: {following}</span>
+                </div>
+
+
+            </div>
+        );
+    }
 }
 
 export default ProfileClass;

@@ -7,6 +7,13 @@ import Error from "./components/Error";
 import ProductDetail from "./components/ProductDetail";
 import Women from "./components/Women";
 import About from "./components/About";
+import { lazy, Suspense } from "react";
+
+// lazy loading
+//Code Splitting
+//Dynamic import
+
+    const Grocery =lazy(()=>import("./components/Grocery"))
 
 const appRouter = createBrowserRouter([
   {
@@ -33,6 +40,10 @@ const appRouter = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "grocery",
+        element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense> ,
       },
       {
         path: "product/:prodId",

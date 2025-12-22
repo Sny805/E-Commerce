@@ -1,5 +1,4 @@
 /* Header */
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -79,149 +78,144 @@
 
 /* product list */
 .product_cart {
-    margin-top: 1.5rem;
-    padding: 1rem 1rem;
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #f9fafb;
+  margin-top: 1.5rem;
+  padding: 1rem 1rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f9fafb;
 }
 
 /* Product Card */
 .product {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 220px;
-    height: 320px;
-    padding: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 320px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .product:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Image Container */
 .img_div {
-    width: 100%;
-    height: 160px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 0.8rem;
+  width: 100%;
+  height: 160px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
 }
 
 /* Image */
 .product_img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .product:hover .product_img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Title */
 .product h1 {
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    color: #222;
-    margin: 0.4rem 0;
-    line-height: 1.3;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #222;
+  margin: 0.4rem 0;
+  line-height: 1.3;
 }
 
 /* Rating & Price */
 .product p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.2rem 0;
 }
 
 .product p:last-child {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #16a34a; /* green price */
+  font-size: 1rem;
+  font-weight: 700;
+  color: #16a34a;
+  /* green price */
 }
 
- /* shimmer css  */
+/* shimmer css  */
 
 
 
- /* Skeleton Card */
+/* Skeleton Card */
 .skeleton_product {
-    width: 220px;
-    height: 320px;
-    padding: 1rem;
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
+  width: 220px;
+  height: 320px;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 /* Image Skeleton */
 .skeleton_div {
-    width: 100%;
-    height: 160px;
-    border-radius: 10px;
-    background: linear-gradient(
-        90deg,
-        #e0e0e0 25%,
-        #f0f0f0 37%,
-        #e0e0e0 63%
-    );
-    background-size: 400% 100%;
-    animation: shimmer 1.4s infinite linear;
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  background: linear-gradient(90deg,
+      #e0e0e0 25%,
+      #f0f0f0 37%,
+      #e0e0e0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
 }
 
 /* Title Skeleton */
 .skeleton_product h1 {
-    width: 90%;
-    height: 16px;
-    border-radius: 6px;
-    background: linear-gradient(
-        90deg,
-        #e0e0e0 25%,
-        #f0f0f0 37%,
-        #e0e0e0 63%
-    );
-    background-size: 400% 100%;
-    animation: shimmer 1.4s infinite linear;
+  width: 90%;
+  height: 16px;
+  border-radius: 6px;
+  background: linear-gradient(90deg,
+      #e0e0e0 25%,
+      #f0f0f0 37%,
+      #e0e0e0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
 }
 
 /* Text Skeleton */
 .skeleton_product p {
-    width: 60%;
-    height: 14px;
-    border-radius: 6px;
-    background: linear-gradient(
-        90deg,
-        #e0e0e0 25%,
-        #f0f0f0 37%,
-        #e0e0e0 63%
-    );
-    background-size: 400% 100%;
-    animation: shimmer 1.4s infinite linear;
+  width: 60%;
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg,
+      #e0e0e0 25%,
+      #f0f0f0 37%,
+      #e0e0e0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
 }
 
 /* Price Skeleton */
 .skeleton_product p:last-child {
-    width: 40%;
+  width: 40%;
 }
 
 
@@ -296,18 +290,19 @@
 
 /* Shimmer Animation */
 @keyframes shimmer {
-    0% {
-        background-position: 100% 0;
-    }
-    100% {
-        background-position: -100% 0;
-    }
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
 }
 
 
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -425,6 +420,55 @@ a{
   background-color: #111827;
 }
 
+.best-seller-wrapper {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #facc15;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.filter {
+  font-size: 1rem;
+  padding: 2rem
+}
+
+.accordian_container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  width: 8rem;
+  height: 2.5rem;
+  cursor: pointer;
+
+}
+
+.accordian_container button {
+  background-color: white;
+  border: none;
+  font-size: 1rem;
+}
+
+.list_container {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  width: 8rem;
+  padding: 0 .5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 .5rem;
+  border-radius: .3rem;
+}
+
+
 /* Mobile */
 @media (max-width: 480px) {
   .filter_bar {
@@ -456,5 +500,3 @@ a{
     font-size: 1.5rem;
   }
 }
-
-

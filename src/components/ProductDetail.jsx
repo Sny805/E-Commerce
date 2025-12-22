@@ -1,35 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useSingleProduct from "./hooks/useSingleProduct";
 
 const ProductDetail = () => {
   const { prodId } = useParams();
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { loading, error, product } = useSingleProduct(prodId)
 
-  useEffect(() => {
-    const fetchProductDetails = async () => {
-      try {
-        setLoading(true);
-        const res = await fetch(
-          `https://fakestoreapi.com/products/${prodId}`
-        );
-
-        if (!res.ok) {
-          throw new Error("Failed to fetch product");
-        }
-
-        const data = await res.json();
-        setProduct(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProductDetails();
-  }, [prodId]);
 
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>{error}</h2>;
