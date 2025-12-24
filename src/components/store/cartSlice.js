@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadCartFromStorage } from "../utills/CartStorage";
 
 
 
 const carSlice = createSlice({
     name: "cart",
     initialState: {
-        cartItems: [],
+        cartItems: loadCartFromStorage(),
     },
     reducers: {
         addItems: (state, action) => {
@@ -15,6 +16,7 @@ const carSlice = createSlice({
                 existingItem.quantity += 1
             } else {
                 state.cartItems.push({ ...item, quantity: 1 })
+
             }
         },
         increaseQty: (state, action) => {
@@ -25,7 +27,7 @@ const carSlice = createSlice({
         },
         decreaseQty: (state, action) => {
             const item = state.cartItems.find((i) => i.id == action.payload)
-            if (item && item.quntity > 1) {
+            if (item && item.quantity > 1) {
                 item.quantity -= 1;
             }
         },

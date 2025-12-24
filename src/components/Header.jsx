@@ -45,6 +45,7 @@ const Header = () => {
           &nbsp;&nbsp;{!isDark ? "Dark Mode" : "Light Mode"}
         </p>
         <li className="cart"><NavLink to="/cart">🛒 Cart - {cart.length}</NavLink></li>
+          <li className="cart"><NavLink to="/login">Login</NavLink></li>
       </ul>
     </header>
   );

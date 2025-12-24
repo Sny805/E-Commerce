@@ -528,7 +528,7 @@ a {
   max-width: 900px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background: #ffffff;
+  background: var(--background-color);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   font-family: Arial, sans-serif;
@@ -543,7 +543,7 @@ a {
 /* EMPTY CART */
 .cart-container h2 {
   text-align: center;
-  color: #6b7280;
+  color: var(--text-color);
 }
 
 /* CART ITEM */
@@ -577,12 +577,12 @@ a {
 .cart-info h3 {
   font-size: 1rem;
   margin-bottom: 0.3rem;
-  color: #111827;
+  color: var(--text-color);
 }
 
 .cart-info p {
   font-size: 0.95rem;
-  color: #374151;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
 }
 
@@ -667,6 +667,82 @@ a {
   margin-top: 1rem;
 }
 
+/* Container */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Card */
+.login-card {
+  background: var(--background-color);
+  padding: 2rem;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Input Fields */
+.login-card input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #6366f1;
+}
+
+/* Button */
+.login-card button {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: #6366f1;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background: #4f46e5;
+}
+
+/* Footer Text */
+.login-footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.login-footer a {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 640px) {
   .cart-item {
@@ -684,6 +760,14 @@ a {
     gap: 1rem;
   }
 }
+
+.error-text {
+  display: block;
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
 
 
 

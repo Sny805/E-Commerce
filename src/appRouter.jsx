@@ -9,6 +9,7 @@ import Women from "./components/Women";
 import About from "./components/About";
 import { lazy, Suspense } from "react";
 import Cart from "./components/cart";
+import Login from "./components/Login";
 
 // lazy loading
 //Code Splitting
@@ -54,7 +55,13 @@ const appRouter = createBrowserRouter([
       {
         path: "product/:prodId",
         element: <ProductDetail />
-      }
+      },
+       {
+        path: "login",
+        element: <Login />,
+      },
+
+        
     ],
   },
 ]);
