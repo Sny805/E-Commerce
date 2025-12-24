@@ -8,7 +8,7 @@ import ProductDetail from "./components/ProductDetail";
 import Women from "./components/Women";
 import About from "./components/About";
 import { lazy, Suspense } from "react";
-import Cart from "./components/cart";
+import Cart from "./components/Cart";
 import Login from "./components/Login";
 
 // lazy loading
