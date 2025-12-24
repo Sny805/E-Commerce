@@ -62,7 +62,7 @@ const ProductCart = () => {
         {
           loading ? (Array(20).fill("").map((_, i) => <Skeleton key={i} />)) : filteredProducts?.map((product) => {
             const isBestSeller = useBestSeller(product?.rating?.rate)
-             console.log(isBestSeller)
+            
             return isBestSeller ? (<HOComponent product={product} key={product.id} />) : (<Product product={product} key={product.id} />)
           })
 

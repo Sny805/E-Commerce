@@ -33,7 +33,7 @@ class AboutClass extends React.Component{
     return(
           <>
           
-            <ProfileClass name="Sunny" email="sunny@gmail.com" address="Hyderabad"/>
+            <Profile/>
           </>
     )
   }

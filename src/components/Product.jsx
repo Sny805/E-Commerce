@@ -12,6 +12,7 @@ const Product = ({product}) => {
          <h1 className='text-3xl underline'>{title}</h1>
          <p>ratings :{rating?.rate}</p>
          <p>Price : {price}</p>
+          
     </div>
     </Link>
   )

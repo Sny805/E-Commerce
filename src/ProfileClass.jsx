@@ -18,9 +18,9 @@ class ProfileClass extends React.Component {
 
             const data = await res.json();
             this.setState({ userDetails: data });
-            this.timer = setInterval(() => {
-                console.log("patel")
-            }, 1000)
+            // this.timer = setInterval(() => {
+            //     console.log("patel")
+            // }, 1000)
         } catch (error) {
             this.setState({ error: error.message });
         }

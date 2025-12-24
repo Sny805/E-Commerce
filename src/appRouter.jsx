@@ -8,12 +8,13 @@ import ProductDetail from "./components/ProductDetail";
 import Women from "./components/Women";
 import About from "./components/About";
 import { lazy, Suspense } from "react";
+import Cart from "./components/cart";
 
 // lazy loading
 //Code Splitting
 //Dynamic import
 
-    const Grocery =lazy(()=>import("./components/Grocery"))
+const Grocery =lazy(()=>import("./components/Grocery"))
 
 const appRouter = createBrowserRouter([
   {
@@ -24,6 +25,14 @@ const appRouter = createBrowserRouter([
       {
         index: true,
         element: <ProductCart />,
+      },
+       {
+        path: "about",
+       element: <Suspense fallback={<h1>Loading...</h1>}><About /></Suspense> ,
+      },
+      {
+        path: "grocery",
+        element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense> ,
       },
       {
         path: "kid",
@@ -37,14 +46,11 @@ const appRouter = createBrowserRouter([
         path: "women",
         element: <Women />,
       },
-      {
-        path: "about",
-        element: <About />,
+       {
+        path: "cart",
+        element: <Cart />,
       },
-      {
-        path: "grocery",
-        element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense> ,
-      },
+     
       {
         path: "product/:prodId",
         element: <ProductDetail />

@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { useProfile } from './components/hooks/useProfile'
+import { ThemeContext } from './components/utills/ThemeContext'
 
-export const Profile = (props) => {
-    const [count,setCount]=useState(0)
-    const { name, email, address } = props;
+export const Profile = () => {
+   const {isDark} = useContext(ThemeContext)
+  console.log(isDark)
 
+    const { userDetails, error } = useProfile()
+      const { name, location, avatar_url, bio, followers, following } =
+            userDetails;
     return (
-        <div style={{border:"2px solid black"}}>
-            <h1> Functional Component</h1>
-            <h1>Name:{name}</h1>
-            <h1>Address:{address}</h1>
-            <h1>Email:{email}</h1>
-            <h1>Count-{count}</h1>
-            <button onClick={()=>setCount(count+1)}>Increment</button>
-        </div>
+       <div className="profile-card">
+                <img className="avatar" src={avatar_url} alt={name} />
+
+                <h2 className="name">{name}</h2>
+                <p className="location">{location || "Location not available"}</p>
+                <p className="bio">{bio || "No bio available"}</p>
+
+                <div className="stats">
+                    <span>Followers: {followers}</span>
+                    <span>Following: {following}</span>
+                </div>
+
+
+            </div>
     )
 }
